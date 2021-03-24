@@ -1,0 +1,25 @@
+//Declaring the SWAP PROCEDURE
+PROCEDURE swap(VAR el1, VAR el2 : INTEGER)
+VAR
+   tmp : INTEGER;
+BEGIN
+  tmp := el1;
+  el1 := el2;
+  el2 := tmp;
+END
+
+ALGORITHM Insertion sort
+VAR
+    tab : ARRAY_OF INTEGER;
+    i,j,n: INTEGER;
+BEGIN
+       n := tab.length;
+FOR i FROM 0 TO n- 1 STEP 1  DO
+       // Last i elements are already in place
+       FOR j  FROM 0 TO n-i-1 STEP 1  DO
+           IF (tab[j] > tab[j+1]) THEN
+               swap(tab[j], tab[j+1])
+           END_IF
+       END_FOR
+   END_FOR
+END
